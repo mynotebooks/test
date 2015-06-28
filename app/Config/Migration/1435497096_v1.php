@@ -1,5 +1,5 @@
 <?php
-class CreatePosts extends CakeMigration {
+class V1 extends CakeMigration {
 
 /**
  * Migration description
@@ -17,14 +17,17 @@ class CreatePosts extends CakeMigration {
 		'up' => array(
 			'create_table' => array(
 				'posts' => array(
-					'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
-					'title' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 255),
-					'body' => array('type' => 'text', 'null' => true, 'default' => null),
+					'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
+					'title' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+					'body' => array('type' => 'text', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 					'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 					'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
+					'author_id' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 36, 'key' => 'index', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 					'indexes' => array(
-						'PRIMARY' => array('column' => 'id', 'unique' => true),
+						'PRIMARY' => array('column' => 'id', 'unique' => 1),
+						'BY_AUTHOR_ID' => array('column' => 'author_id', 'unique' => 0),
 					),
+					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB'),
 				),
 			),
 		),
