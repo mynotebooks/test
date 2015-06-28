@@ -1,0 +1,38 @@
+{
+    "name": "phpcibook/blogapp",
+    "authors": [
+        {
+            "name": "Kaz Watanabe",
+            "email": "kaz@decr.jp"
+        }
+    ],
+    "config": {
+    	"vendor-dir": "Vendor"
+    },
+    "repositories": [
+        {
+           "type": "vcs",
+           "url": "git://github.com/sizuhiko/Bdd.git"
+        }
+    ],
+    "require": {
+        "cakephp/cakephp": "2.5.*",
+        "josegonzalez/cakephp-environments": "1.0.0",
+        "cakedc/migrations": "~2.3",
+        "slywalker/boost_cake": "*",
+        "cakedc/users": "2.1.0",
+        "cakedc/utils": "*",
+        "cakedc/search": "*"
+    },
+    "require-dev": {
+       "pear/console_commandline": "@dev",
+       "pear/pear_exception": "@dev",
+        "sizuhiko/Bdd": "dev-master",
+        "behat/mink-goutte-driver": "*",
+        "sizuhiko/fabricate": "1.*",
+        "phing/phing": "~2.8",
+        "cakephp/cakephp-codesniffer": "0.1.*",
+        "phpmd/phpmd": "2.*",
+        "sebastian/phpcpd": "2.*"
+   }
+}
