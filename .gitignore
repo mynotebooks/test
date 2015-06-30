@@ -2,4 +2,5 @@
 app/Plugin
 app/Vendor
 app/reports
+app/tmp
 deploy/config/deploy/production.php
