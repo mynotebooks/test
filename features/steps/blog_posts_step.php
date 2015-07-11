@@ -8,7 +8,7 @@ $steps->Given('/^"([^"]*)" としてログインしている$/', function($world
 	$user = $world->getUser($username);
 
 	return [
-		new Given('"' . Router::url(['controller' => 'app_users', 'action' => 'login']) . '" を表示している'),
+		new Given('"' . 'http://192.168.33.10/users/login' . '" を表示している'),
 		new When('"Eメール" フィールドに "' . $user['email'] . '" と入力する'),
 		new When('"パスワード" フィールドに "' . $user['password'] . '" と入力する'),
 		new When('"ログイン" ボタンをクリックする'),
