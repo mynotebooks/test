@@ -8,6 +8,6 @@ $steps->When('/^テストページ$/', function($world, $page) {
 		new When('"' . "/test.php" . '" へ移動する'),
 	];
 });
-$steps->Given('/^テストページ$/', function($world) {
+$steps->Given('/^テストページ2$/', function($world) {
     throw new \Behat\Behat\Exception\PendingException();
 });
