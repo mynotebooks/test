@@ -63,6 +63,7 @@ include dirname(__FILE__) . DS . 'bootstrap' . DS . 'environments.php';
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+#CakePlugin::load('DebugKit');
 CakePlugin::load('Migrations');
 CakePlugin::load('BoostCake');
 CakePlugin::load('Users', array('routes' => null));
