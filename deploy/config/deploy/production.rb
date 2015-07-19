@@ -23,6 +23,7 @@ server '192.168.33.200',
      },
      cake_env: "production",
      app_config:'production.php',
+     email_config:'email.php',
      group: 'vagrant'
 
 # Custom SSH Options

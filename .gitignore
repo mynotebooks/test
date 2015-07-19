@@ -4,3 +4,4 @@ app/Vendor
 app/reports
 app/tmp
 deploy/config/deploy/production.php
+deploy/config/deploy/email.php

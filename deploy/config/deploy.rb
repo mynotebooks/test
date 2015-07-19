@@ -54,9 +54,16 @@ namespace :deploy do
   namespace :symlink do
     task :linked_files do
       on release_roles :app do |role|
+        # app config
         if (role.properties.app_config.instance_of?(String)) then
           target = release_path.join("app/Config/bootstrap/environments/#{role.properties.app_config}")
           source = shared_path.join(role.properties.app_config)
+          execute :ln, '-s', source, target
+        end
+        # email config
+        if (role.properties.email_config.instance_of?(String)) then
+          target = release_path.join("app/Config/#{role.properties.email_config}")
+          source = shared_path.join(role.properties.email_config)
           execute :ln, '-s', source, target
         end
       end
