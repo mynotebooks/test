@@ -53,6 +53,7 @@ namespace :deploy do
       cake_env = role.properties.cake_env
 
       execute "env CAKE_ENV=#{cake_env} #{release_path}/app/Console/cake Migrations.migration run all -p"
+      execute "env CAKE_ENV=#{cake_env} #{release_path}/app/Console/cake Migrations.migration run all --plugin Users"
     end
   end
 
