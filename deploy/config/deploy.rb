@@ -3,7 +3,7 @@
 set :application, 'blogapp'
 set :repo_url, 'git@github.com:phpcibook/blogapp.git'
 set :deploy_to, '/var/www/application'
-set :linked_dirs, %w{tmp/cache tmp/cache/models tmp/cache/persistent tmp/cache/views tmp/logs tmp/sessions tmp/tests webroot}
+set :linked_dirs, %w{tmp/cache tmp/cache/models tmp/cache/persistent tmp/cache/views tmp/logs tmp/sessions tmp/tests}
 set :linked_files, %w{email.php production.php}
 set :log_level, :info
 
@@ -53,7 +53,6 @@ namespace :deploy do
       cake_env = role.properties.cake_env
 
       execute "env CAKE_ENV=#{cake_env} #{release_path}/app/Console/cake Migrations.migration run all -p"
-      execute "env CAKE_ENV=#{cake_env} #{release_path}/app/Console/cake Migrations.migration run all --plugin Users"
     end
   end
 
