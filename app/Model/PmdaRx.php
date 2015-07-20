@@ -8,7 +8,7 @@ class PmdaRx extends AppModel {
 
     public $hasOne = 'PmdaRxRisk';
 
-    # 関連ファイルを取得する
+    # 関連ファイルを取得するddd
 	public function download($id = null) {
 		ini_set('user_agent', 'User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0');
 		$html = @file_get_contents("http://www.info.pmda.go.jp/go/pack/$id?view=foot");
