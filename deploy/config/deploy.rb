@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 
-set :application, 'blogapp'
-set :repo_url, 'git@github.com:phpcibook/blogapp.git'
+set :application, 'test'
+set :repo_url, 'git@github.com:mynotebooks/test.git'
 set :deploy_to, '/var/www/application'
 set :linked_dirs, %w{tmp/cache tmp/cache/models tmp/cache/persistent tmp/cache/views tmp/logs tmp/sessions tmp/tests}
 set :linked_files, %w{email.php production.php}
