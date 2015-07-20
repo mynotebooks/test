@@ -1,6 +1,6 @@
 <?php
 class PmdaRxController extends AppController {
-	public $viewPath = '/db/pmda/rx/';
+	#public $viewPath = '/db/pmda/rx/';
 	public $helpers = array('Html', 'Form', 'Js', 'Session');
     public $uses = array('Rx', 'KeggDrug', 'Kegg', 'Pmda', 'PmdaRx', 'PmdaRxUpdate');
     public $components = array('Session');
@@ -31,7 +31,7 @@ class PmdaRxController extends AppController {
 		$this->Session->write('Person.eyeColor', array('asdfsa', 'asdfsa', 'asdfsa', 'asdfsa', 'asdfsa'));
 		
 
-		$this->render('/pmda/rx/index');
+		#$this->render('/pmda/rx/index');
 		$this->set('test', $this->Session->read('Person.eyeColor'));
 	}
 
