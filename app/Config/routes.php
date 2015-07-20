@@ -17,6 +17,7 @@
 	Router::connect('/users/logout', array('controller' => 'app_users', 'action' => 'logout'));
 
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'index'));
+	Router::connect('/:controller/:action/*');
 	
 /**
  * Load all plugin routes. See the CakePlugin documentation on
