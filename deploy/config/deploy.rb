@@ -4,7 +4,7 @@ set :application, 'blogapp'
 set :repo_url, 'git@github.com:phpcibook/blogapp.git'
 set :deploy_to, '/var/www/application'
 set :linked_dirs, %w{tmp/cache tmp/cache/models tmp/cache/persistent tmp/cache/views tmp/logs tmp/sessions tmp/tests}
-set :linked_files, %w{production.php}
+set :linked_files, %w{email.php production.php}
 set :log_level, :info
 
 framework_tasks = ["symlink:linked_dirs", "symlink:linked_files"]
@@ -30,8 +30,13 @@ namespace :deploy do
 
     before :linked_files, :upload_app_config do
       on release_roles :app do |role|
+        # app config
         if (role.properties.app_config.instance_of?(String)) then
           upload! "./config/deploy/#{role.properties.app_config}", shared_path
+        end
+        # email config
+        if (role.properties.email_config.instance_of?(String)) then
+          upload! "./config/deploy/#{role.properties.email_config}", shared_path
         end
       end
     end
